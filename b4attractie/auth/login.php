@@ -8,10 +8,12 @@ include_once "../components/head.php";
     ?>
 
     <main>
-    <div class="login">
+        <h1>Sign-up</h1>
+        <div class="login">
             <form action="backend/loginController.php" method="post" class="login">
                 <label for="login-username">Gebruikersnaam:</label>
                 <input type="text" id="login-username" name="username" placeholder="Gebruikersnaam" required>
+
                 <label for="login-password">Wachtwoord:</label>
                 <?php 
                 if(isset($_GET['msg']))
@@ -20,6 +22,7 @@ include_once "../components/head.php";
                 }
                 ?>
                 <input type="password" id="login-password" name="password" placeholder="Wachtwoord" required>
+                
                 <input type="submit" id="login" value="login" name="submit">
             </form>
         </div>
