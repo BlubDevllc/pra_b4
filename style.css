@@ -160,3 +160,58 @@ form label {
     height: 60%;
     object-fit: cover;
 }
+/* for horeca.php */
+.ph {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    flex-wrap: wrap;
+}
+.ph1{
+
+    margin: 5px;
+
+    width: 25%;
+}
+.ph2{
+    
+
+    margin: 5px;
+    width: 25%;
+    
+}
+
+.ph3{
+
+    margin: 5px;
+    width: 25%;
+}
+.ph4{
+
+    margin: 5px;
+    width: 25%;
+}
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }

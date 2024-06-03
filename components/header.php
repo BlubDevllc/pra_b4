@@ -8,6 +8,7 @@
                 <a href="">Ondek Ons</a>
                 <a href="">Attracties</a>
                 <a href="">Inloggen</a>
+                <a href="horeca.php">Horeca</a>
             </nav>
         </div>
     </div>
