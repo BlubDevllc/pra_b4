@@ -6,7 +6,8 @@
             </div>
             <nav>
                 <a href="">Ondek Ons</a>
-                <a href="">Attracties</a>
+                <a href="/pra_b4/attractie/">Attracties</a>
+                <a href="/pra_b4/attractie/create.php">Submit Attractie</a>
                 <a href="">Inloggen</a>
             </nav>
         </div>
