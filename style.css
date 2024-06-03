@@ -163,37 +163,71 @@ form label {
 /* for horeca.php */
 .ph {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 5px;
     flex-wrap: wrap;
 }
 .ph1{
-
+    
     margin: 5px;
 
     width: 25%;
+}
+.dogg{
+    margin-top: 1rem;
+    height: 200px;
+    width: 100%;
+
+    border-radius: 10px;
 }
 .ph2{
-    
+      
 
     margin: 5px;
+
     width: 25%;
     
 }
+.bakery{
+    
+    
+    margin-top: 1rem;
+    height: 200px;
+    width: 100%;
 
+    border-radius: 10px;
+}
 .ph3{
 
     margin: 5px;
     width: 25%;
+}
+.kiosk{
+    
+    margin-top: 1rem;
+    height: 200px;
+    width: 100%;
+
+    border-radius: 10px;
+
 }
 .ph4{
 
     margin: 5px;
     width: 25%;
 }
+.ph5{
+
+    margin: 5px;
+    width: 25%;
+}
+.ph6{
+
+    margin: 5px;
+    width: 25%;
+}
 .collapsible {
-    background-color: #eee;
-    color: #444;
+    background-image: "assets/Thebakery.webp";
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -201,17 +235,19 @@ form label {
     text-align: left;
     outline: none;
     font-size: 15px;
-  }
+    height: 200px;
+}
   
   
   .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color: #cccccc91;
   }
   
   /* Style the collapsible content. Note: hidden by default */
   .content {
     padding: 0 18px;
-    display: none;
+
+    max-height: 0px;
     overflow: hidden;
-    background-color: #f1f1f1;
-  }
+    transition: max-height 0.2s ease-out;
+  }  
