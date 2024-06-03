@@ -4,7 +4,7 @@ include_once '../config/conn.php';
 
 function createDatabase($conn)
 {
-    $query = "CREATE TABLE current_attractions (
+    $query = "CREATE TABLE attractions (
         id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         name varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
         type varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
