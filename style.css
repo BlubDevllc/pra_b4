@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main: #4c3b4d;
+    --secondary:white;
+    --accent: #ffeedb;
+    --dark:#3e313f;
+}
+
+body {
+    background-color: var(--accent);
+}
+
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--secondary);
+    color: var(--main);
+    font-family: "Poetsen One", sans-serif;
+    padding: 3vh;
+    border-bottom-left-radius: 3vh;
+    border-bottom-right-radius: 3vh;
+}
+
+header h1 {
+    font-size: 4vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {}
+
+nav a {
+    text-decoration: none;
+    padding: 1.5vh;
+    border-radius: 2vh;
+    color: var(--main);
+    font-size: 1.8vh;
+}
+
+.grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap:5%;
+    display: grid;
+}
+
+.attraction {
+    background-color:var(--secondary);
+    padding: 1vh;
+    margin: 2vh;
+    border-radius: 3vh;
+
+    height: 50vh;
+    width: 45vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.attraction img {
+    height: 25vh;
+    width: 100%;
+    border-radius: 2vh;
+}
+
+.attraction .title {
+    font-family: "Poetsen One", sans-serif;
+    color:var(--dark);
+    font-size: 3vh;
+    margin-top: 1vh;
+    text-align: center;
+}
+
+.attraction .subtitle {
+    font-family: "Poetsen One", sans-serif;
+    color:var(--main);
+    font-size: 2vh;
+    margin-top: 1vh;
+    text-align: center;
+}
+
+.attraction .checkout {
+    font-family: "Poetsen One", sans-serif;
+    color: black;
+    font-size: 2vh;
+    margin-top: 2vh;
+    padding: 2vh;
+    background-color: var(--main);
+    width:70%;
+    text-align: center;
+    border-radius: 2vh;
+}
+
+.login-form {
+    background-color:var(--secondary);
+    padding: 1vh;
+    margin: 2vh;
+    border-radius: 3vh;
+
+    height: 50vh;
+    width: 45vh;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form input {
+    display: block;
+    background-color: var(--accent);
+    border-radius: 1vh;
+    height: 3vh;
+    width: 70%;
+    margin-bottom: 3vh;
+}
+
+form label {
+    display: block;
+    font-family: "Poetsen One", sans-serif;
+}
+
+.login-button {
+    font-family: "Poetsen One", sans-serif;
+    background-color: var(--main);
+    text-align: center;
+    color: black;
+    font-size: 2vh;
+    padding: 2vh;   
+    width:70%;
+    border-radius: 2vh;
+}
+
+.main {
+    display: grid;
+    grid-template-rows: 30% 30% 30%;
+}
+
+.main img {
+    overflow: hidden;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
