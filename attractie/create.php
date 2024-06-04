@@ -14,6 +14,7 @@ include_once "../backend/helpers.php";
                 <div class="login-form">
                     <form action="../backend/createAttraction.php" method="POST" enctype="multipart/form-data">
                         <div class="center flex-direction-column">
+                            <h2>Submit Attractie</h2>
                             <input type="text" id="name" name="name" placeholder="Name" class="input">
                             <input type="text" id="type" name="type" placeholder="Type" class="input">
                             <textarea name="extra_information" id="extra_information" placeholder="Extra Information" class="input"></textarea>
