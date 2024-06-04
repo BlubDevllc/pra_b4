@@ -23,10 +23,14 @@ include_once "../components/head.php";
         }
         ?>
 
-        <form action="backend/registerController.php" method="POST">
+        <form action="../backend/registerController.php" method="POST">
         <div class="form-group">
                 <label for="user">Naam:</label>
                 <input type="text" name="user" id="user" placeholder="naam">
+            </div>
+            <div class="form-group">
+                <label for="user">Email:</label>
+                <input type="email" name="email" id="email" placeholder="email">
             </div>
             <div class="form-group">
                 <label for="password">Wachtwoord:</label>
