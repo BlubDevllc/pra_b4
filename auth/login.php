@@ -28,7 +28,7 @@ include_once "../components/head.php";
     ?>
 
     <main>
-        <h1>Sign-up</h1>
+        <h1>login</h1>
         <div class="login">
             <form action="backend/loginController.php" method="post" class="login">
                 <label for="login-username">Gebruikersnaam:</label>
