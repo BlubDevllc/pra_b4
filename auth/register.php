@@ -1,19 +1,15 @@
-<?php //session_start(); ?>
-
 <!doctype html>
 <html lang="nl">
 
 <head>
-<?php
-include_once "../components/head.php";
-?>
+    <?php
+    include_once "../components/head.php";
+    ?>
 </head>
 
 <body>
 
     <?php include_once '../components/header.php'; ?>
-    
-    <div class="container">
 
         <h1>Registreren</h1>
         <?php
@@ -53,11 +49,3 @@ include_once "../components/head.php";
 </body>
 
 </html>
-
-
-
-
-
-
-
-

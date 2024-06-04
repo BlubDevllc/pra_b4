@@ -10,7 +10,7 @@
                 <a href="/pra_b4/attractie/create.php">Submit Attractie</a>
                 <a href="/pra_b4/auth/login.php">Inloggen</a>
                 <a href="/pra_b4/auth/register.php">Registreren</a>
-                <a href="horeca.php">Horeca</a>
+                <a href="/pra_b4/horeca.php">Horeca</a>
             </nav>
         </div>
     </div>
