@@ -102,7 +102,6 @@ nav a {
     text-align: center;
     border-radius: 2vh;
 }
-
 .login-form {
     background-color: var(--secondary);
     padding: 1vh;
@@ -119,10 +118,19 @@ nav a {
     align-items: center;
 }
 
-form {
+.container
+{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3vh;
 }
 
 .input {
@@ -134,6 +142,10 @@ form {
     margin-bottom: 3vh;
 }
 
+.input-register
+{
+    max-width: 50%;
+}
 .label {
     display: block;
     font-family: "Poetsen One", sans-serif;
