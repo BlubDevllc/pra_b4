@@ -1,47 +1,39 @@
-<?php //session_start(); ?>
-
 <!doctype html>
 <html lang="nl">
 
 <head>
-<?php
-include_once "../components/head.php";
-?>
+    <?php
+    include_once "../components/head.php";
+    ?>
 </head>
 
 <body>
 
     <?php include_once '../components/header.php'; ?>
-    
-    <div class="container">
 
-        <h1>Registreren</h1>
-        <?php
-        if(isset($_GET['msg']))
-        {
-            echo "<div class='msg'>" . $_GET['msg'] . "</div>";
-        }
-        ?>
 
-        <form action="../backend/registerController.php" method="POST">
-        <div class="form-group">
-                <label for="user">Naam:</label>
-                <input type="text" name="user" id="user" placeholder="naam">
+    <div class="wrapper">
+        <div class="center">
+            <?php
+            if (isset($_GET['msg'])) {
+                echo "<div class='msg'>" . $_GET['msg'] . "</div>";
+            }
+            ?>
+
+            <div class="login-form">
+                <form action="../backend/registerController.php" method="POST" enctype="multipart/form-data">
+                    <div class="center flex-direction-column">
+                        <h2>Registereren</h2>
+                        <input type="text" id="username" name="username" placeholder="Username" class="input">
+                        <input type="email" id="email" name="email" placeholder="Email" class="input">
+                        <input id="password" name="password" type="password" placeholder="Wachtword" class="input">
+                        <input id="password_again" name="password_again" type="password" placeholder="Wachtword herhaling" class="input">
+                        <input type="hidden" value="register" name="action" id="action">
+                        <input type="submit" value="Register" class="login-button">
+                        <a href="login.php">Heb je al een account?</a>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="user">Email:</label>
-                <input type="email" name="email" id="email" placeholder="email">
-            </div>
-            <div class="form-group">
-                <label for="password">Wachtwoord:</label>
-                <input type="password" name="password" id="password" placeholder="pass">
-            </div>
-            <div class="form-group">
-                <label for="password_check">Wachtwoord herhalen:</label>
-                <input type="password" name="password_check" id="password_check" placeholder="pass">
-            </div>
-            <input type="submit" value="Registreren">
-        </form>
+        </div>
     </div>
 
     <?php
@@ -50,11 +42,3 @@ include_once "../components/head.php";
 </body>
 
 </html>
-
-
-
-
-
-
-
-

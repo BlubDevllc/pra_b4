@@ -1,39 +1,45 @@
-<?php
-include_once "../components/head.php";
+<?php //session_start(); 
 ?>
 
-<body>
+<!doctype html>
+<html lang="nl">
+
+<head>
     <?php
-    include_once "../components/header.php";
+    include_once "../components/head.php";
     ?>
+</head>
 
-    <main>
-        <div class="wrapper">
-            <div class="center">
-                <h1>login</h1>
-                <div class="login-form">
-                    <form action="backend/loginController.php" method="post" class="login">
-                        <label for="login-username">Gebruikersnaam:</label>
-                        <input type="text" id="login-username" name="username" placeholder="Gebruikersnaam" required>
+<body>
 
-                        <label for="login-password">Wachtwoord:</label>
-                        <?php 
-                        if(isset($_GET['msg']))
-                        {
-                            echo "<p class='error'>" . $_GET['msg'] . "</p>";
-                        }
-                        ?>
-                        <input type="password" id="login-password" name="password" placeholder="Wachtwoord" required>
-                
-                        <input type="submit" id="login" value="login" name="submit">
-                    </form>
-                </div>
+    <?php include_once '../components/header.php'; ?>
+
+
+    <div class="wrapper">
+        <div class="center">
+            <?php
+            if (isset($_GET['msg'])) {
+                echo "<div class='msg'>" . $_GET['msg'] . "</div>";
+            }
+            ?>
+
+            <div class="login-form">
+                <form action="../backend/registerController.php" method="POST" enctype="multipart/form-data">
+                    <div class="center flex-direction-column">
+                        <h2>Login</h2>
+                        <input type="email" id="email" name="email" placeholder="Email" class="input">
+                        <input id="password" name="password" type="password" class="input">
+                        <input type="hidden" value="login" name="action" id="action">
+                        <input type="submit" value="Login" class="login-button">
+                        <a href="register.php">Heb je geen account?</a>
+                </form>
             </div>
         </div>
-    </main>
-    <footer>
-        <?php
-        include_once "../components/footer.php";
-        ?>
-    </footer>
+    </div>
+
+    <?php
+    include_once "../components/footer.php";
+    ?>
 </body>
+
+</html>
