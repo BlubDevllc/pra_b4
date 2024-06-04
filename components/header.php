@@ -11,6 +11,7 @@
                 <a href="/pra_b4/auth/login.php">Inloggen</a>
                 <a href="/pra_b4/auth/register.php">Registreren</a>
                 <a href="/pra_b4/horeca/horeca.php">Horeca</a>
+                <a href="/pra_b4/contact.php">Contact</a>
             </nav>
         </div>
     </div>
