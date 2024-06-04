@@ -11,8 +11,18 @@
         die("Vul een username in");
     }
 
-    require_once 'conn.php';
-    $sql = "SELECT * FROM users WHERE username = :user";
+    $email = $_POST['email'];
+    if(empty($email))
+    {
+        die("Vul een email in");
+    }
+    if(filter_var($email, FILTER_VALIDATE_EMAIL) === false)
+    {
+        die("Email ongeldig");
+    }
+
+    require_once '../config/conn.php';
+    $sql = "SELECT * FROM admins WHERE username = :user";
     $statement = $conn->prepare($sql);
     $statement->execute([":user" => $user]);
     if($statement->rowCount() > 0)
@@ -33,11 +43,12 @@
     }
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users (username, password) VALUES (:user, :hash)";
+    $query = "INSERT INTO admins (username, password, email) VALUES (:user, :hash, :email)";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":user" => $user,
         ":hash" => $hash,
+        ":email" => $email
     ]);
 
     header("Location:../index.php"); //later login.php

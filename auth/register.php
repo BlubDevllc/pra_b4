@@ -29,6 +29,10 @@ include_once "../components/head.php";
                 <input type="text" name="user" id="user" placeholder="naam">
             </div>
             <div class="form-group">
+                <label for="user">Email:</label>
+                <input type="email" name="email" id="email" placeholder="email">
+            </div>
+            <div class="form-group">
                 <label for="password">Wachtwoord:</label>
                 <input type="password" name="password" id="password" placeholder="pass">
             </div>
