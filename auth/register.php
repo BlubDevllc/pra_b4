@@ -10,7 +10,7 @@
 <body>
 
     <?php include_once '../components/header.php'; ?>
-
+    <div class="container">
         <h1>Registreren</h1>
         <?php
         if(isset($_GET['msg']))
@@ -41,6 +41,7 @@
             </div>
         </form>
         </div>
+    </div>
     </div>
 
     <?php
