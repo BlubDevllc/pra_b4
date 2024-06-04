@@ -1,35 +1,56 @@
+<?php //session_start(); ?>
+
+<!doctype html>
+<html lang="nl">
+
+<head>
 <?php
 include_once "../components/head.php";
 ?>
+</head>
 
 <body>
-    <?php
-    include_once "../components/header.php";
-    ?>
 
-    <main>
-        <h1>Sign-up</h1>
-        <div class="signup">
-            <form action="backend/process_sigup.php" method= "post" class="signup">
-                <label for="signup-name">Naam:</label> 
-                <input type="text" id="signup-name" name="name" placeholder="Naam" required>
+    <?php include_once '../components/header.php'; ?>
+    
+    <div class="container">
 
-                <label for="signup-username">Gebruikersnaam:</label>
-                <input type="text" id="signup-username" name="username" placeholder="Gebruikersnaam" required>
+        <h1>Registreren</h1>
+        <?php
+        if(isset($_GET['msg']))
+        {
+            echo "<div class='msg'>" . $_GET['msg'] . "</div>";
+        }
+        ?>
 
-                <label for="signup-password">Wachtwoord:</label>
-                <input type="password" id="signup-password" name="password" placeholder="Wachtwoord" required>
-
-                <label for="signup-password-confirmation">Wachtwoord Herhalen: </label>
-                <input type="password" id="signup-password-confirmation" name="password_confirmation">
-                
-                <input type="submit" id="sign-up" value="sign-up" name="submit">
-            </form>
-        </div>
-
-    </main>
+        <form action="backend/registerController.php" method="POST">
+        <div class="form-group">
+                <label for="user">Naam:</label>
+                <input type="text" name="user" id="user" placeholder="naam">
+            </div>
+            <div class="form-group">
+                <label for="password">Wachtwoord:</label>
+                <input type="password" name="password" id="password" placeholder="pass">
+            </div>
+            <div class="form-group">
+                <label for="password_check">Wachtwoord herhalen:</label>
+                <input type="password" name="password_check" id="password_check" placeholder="pass">
+            </div>
+            <input type="submit" value="Registreren">
+        </form>
+    </div>
 
     <?php
     include_once "../components/footer.php";
     ?>
 </body>
+
+</html>
+
+
+
+
+
+
+
+
