@@ -32,27 +32,28 @@ include_once "components/head.php";
         </div>
     </div>
         <div class='ph4'>   
-
-        
         <button type="button" class="collapsible">phat Jimmy's</button>
             <div class="content">
-                <p>test</p>
+                <img class="phat" src="assets/phat.jpg" alt="">
+                <p>phat jimmy's is een burger tent met allerlij soorten en maten burgers perfect voor een lange dag in het park!</p>
             </div>
         </div>
         <div class='ph5'>   
 
         
-            <button type="button" class="collapsible">phat Jimmy's</button>
+            <button type="button" class="collapsible">slush rush</button>
             <div class="content">
-                <p>test</p>
+                <img class="slush" src="assets/slush.jpg" alt="">
+                <p>slush rush is een slushy tent voor als het dagje uit je net iets te warm word!</p>
             </div>
         </div>
         <div class='ph6'>   
 
         
-            <button type="button" class="collapsible">phat Jimmy's</button>
+            <button type="button" class="collapsible">pitstsa</button>
             <div class="content">
-                <p>test</p>
+                <img class="pizza" src="assets/pizza.jpg" alt="">
+                <p>pitstsa is een kleine pizza tent waar pizza's op de orgineele itiliaanse manier in een heete steen over </p>
             </div>
         </div>
     </div>
