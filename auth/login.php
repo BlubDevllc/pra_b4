@@ -11,7 +11,7 @@ include_once "../components/head.php";
         <div class="wrapper">
             <div class="center">
                 <h1>login</h1>
-                <div class="login">
+                <div class="login-form">
                     <form action="backend/loginController.php" method="post" class="login">
                         <label for="login-username">Gebruikersnaam:</label>
                         <input type="text" id="login-username" name="username" placeholder="Gebruikersnaam" required>
