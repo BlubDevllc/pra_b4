@@ -10,7 +10,7 @@ $future_attractions = [];
 $current_date = new DateTime();
 
 foreach ($attractions as $attraction) {
-    $attraction_date = new DateTime($attraction["openes_on"]);
+    $attraction_date = new DateTime($attraction["opens_on"]);
 
     if ($attraction_date < $current_date) {
         $opened_attractions[] = $attraction;
