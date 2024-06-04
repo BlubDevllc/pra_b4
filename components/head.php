@@ -15,7 +15,6 @@
 </head>
 
 <?php
-session_start();
 
 function setTitle($title)
 {

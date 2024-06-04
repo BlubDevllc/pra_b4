@@ -1,4 +1,9 @@
 <?php
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php?msg=Je bent niet ingelogd");
+    exit;
+ }
+ 
 include_once "components/head.php";
 ?>
 
@@ -10,12 +15,6 @@ include_once "components/head.php";
     <main>
         <div class="main">
             <img src="assets/main.jpg" alt="">
-            <div>
-                <h1>s</h1>
-            </div>
-            <div>
-<h1>s</h1>
-            </div>
         </div>
     </main>
 

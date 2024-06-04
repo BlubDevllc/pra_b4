@@ -1,47 +1,101 @@
-<?php  
-    //session_start();
-    if(isset($_SESSION['user_id']))
-    {
-        die("Kan niet registreren - je bent al ingelogd");
-    }
+<?php
+include_once "../config/conn.php";
 
-    $user = $_POST['user'];
-    if(empty($user))
-    {
-        die("Vul een username in");
-    }
+session_start();
 
-    require_once 'conn.php';
-    $sql = "SELECT * FROM users WHERE username = :user";
-    $statement = $conn->prepare($sql);
-    $statement->execute([":user" => $user]);
-    if($statement->rowCount() > 0)
-    {
-        die("Username is al in gebruik");
-    }
+enum STATUS
+{
+    case USER_EXISTS;
+    case SUCESSS;
+    case USER_NOT_FOUND;
+    case WRONG_PASSWORD;
+}
 
-    $password = $_POST['password'];
-    $password_check = $_POST['password_check'];
-    if($password != $password_check)
-    {
-        die("Wachtwoorden zijn niet gelijk");
-    }
-
-    if(empty($password))
-    {
-        die("Wachtwoord mag niet leeg zijn");
-    }
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-
-    $query = "INSERT INTO users (username, password) VALUES (:user, :hash)";
+function registerUser($username, $email, $password, $conn)
+{
+    $query = "SELECT * FROM admins WHERE email=:email";
     $statement = $conn->prepare($query);
     $statement->execute([
-        ":user" => $user,
-        ":hash" => $hash,
+        ":email" => $email
+    ]);
+    if ($statement->rowCount() > 0) {
+        return STATUS::USER_EXISTS;
+    }
+
+    $query = "INSERT INTO admins (username, email, password) VALUES(:username, :email, :password)";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ":email" => $email,
+        ":username" => $username,
+        ":password" => password_hash($password, PASSWORD_DEFAULT)
     ]);
 
-    header("Location:../index.php"); //later login.php
+    return STATUS::SUCESSS;
+}
 
-    exit;
-    
-?>
+function loginUser($email, $password, $conn)
+{
+    $query = "SELECT * FROM admins WHERE email=:email";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ":email" => $email
+    ]);
+
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if (!$user)
+        return STATUS::USER_NOT_FOUND;
+
+    if (password_verify($password, $user["password"]))
+    {
+        $_SESSION["admin_id"] = $user["id"];
+        $_SESSION["admin_username"] = $user["username"];
+        return STATUS::SUCESSS;
+    }
+
+    return STATUS::WRONG_PASSWORD;
+}
+
+if ($_POST["action"] == "register")
+{
+    if ($_POST["password"] != $_POST["password_again"])
+    {
+        header("Location: ../auth/register.php?msg=Wachtwoord herhaling is niet dezelfde als jouw wachtwoord!");
+        die();
+    }
+
+    $status = registerUser($_POST["username"], $_POST["email"], $_POST["password"], $conn);
+
+    if ($status == STATUS::SUCESSS)
+    {
+        header("Location: ../auth/login.php?msg=Je mag nu inloggen!");
+        die();
+    }
+
+    if ($status == STATUS::USER_EXISTS)
+    {
+        header("Location: ../auth/register.php?msg=Email bestaat al!");
+        die();
+    }
+}
+
+if ($_POST["action"] == "login")
+{
+    $status = loginUser($_POST["email"], $_POST["password"], $conn);
+
+    if ($status == STATUS::SUCESSS)
+    {
+        header("Location: ../index.php");
+        die();
+    }
+
+    if ($status == STATUS::USER_NOT_FOUND)
+    {
+        header("Location: ../auth/login.php?msg=Account niet gevonden!");
+        die();
+    }
+}
+
+header("../index.php");
+die();
+
