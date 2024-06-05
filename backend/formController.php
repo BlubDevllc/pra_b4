@@ -1,10 +1,22 @@
 <?php
+
     include_once "../config/conn.php";
 
-    $naam = $_POST['naam'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
-    $reden = $_POST['reden'];
+    $reason = $_POST['reason'];
     $info = $_POST['info'];
 
-    
+    $query = "INSERT INTO contact(name, email, reason, description) VALUES(:name, :email, :reason, :description)";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ":name" => $name,
+        ":email" => $email,
+        ":reason" => $reason,
+        ":description" => $info
+    ]);
+
+    header("Location: ../contact.php?msg=formulierVerstuurd!");
+
+    exit;
 ?>
