@@ -43,6 +43,12 @@ foreach ($attractions as $attraction) {
                             <div class="openes-on">
                                 Geopened op: <?php echo $attraction["openes_on"]; ?>
                             </div>
+                            <div class="under-maintenence">
+                                <?php if ($attraction['under_maintenance'] == 1) {
+                                    echo "Onder onderhoud";
+                                } 
+                                ?>
+                            </div>
                         </div>
                         <a class="checkout" href="index.php?attraction=<?php $attraction["id"]; ?>">Bekijk</a>
                     </div>
@@ -63,6 +69,12 @@ foreach ($attractions as $attraction) {
                             </div>
                             <div class="openes-on">
                                 Geopened op: <?php echo $attraction["openes_on"]; ?>
+                            </div>
+                            <div class="under-maintenence">
+                                <?php if ($attraction['under_maintenance'] == 1) {
+                                    echo "Onder onderhoud";
+                                } 
+                                ?>
                             </div>
                         </div>
                         <a class="checkout" href="index.php?attraction=<?php $attraction["id"]; ?>">Bekijk</a>

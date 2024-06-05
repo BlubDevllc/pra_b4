@@ -2,10 +2,10 @@
 
 include_once "../config/conn.php";
 
-function createAttraction($conn, $name, $type, $extra_information, $capacity, $status, $photo_name, $opened_on)
+function createAttraction($conn, $name, $type, $extra_information, $capacity, $status, $photo_name, $opened_on, $under_maintenance)
 {
-    $query = "INSERT INTO attractions (name, type, capacity, openes_on, extra_information, photo_name, status)
-              VALUES(:name, :type, :capacity, :openes_on, :extra_information, :photo_name, :status)";
+    $query = "INSERT INTO attractions (name, type, capacity, openes_on, extra_information, photo_name, status, under_maintenance)
+              VALUES(:name, :type, :capacity, :openes_on, :extra_information, :photo_name, :status, :under_maintenance)";
 
     $statement = $conn->prepare($query);
 
@@ -16,7 +16,8 @@ function createAttraction($conn, $name, $type, $extra_information, $capacity, $s
         ':capacity' => $capacity,
         ':status' => $status,
         ':photo_name' => $photo_name,
-        ':openes_on' => $opened_on
+        ':openes_on' => $opened_on,
+        ':under_maintenance' => $under_maintenance
     ]);
 }
 
@@ -27,6 +28,7 @@ $extra_information = $_POST["extra_information"];
 $capacity = $_POST["capacity"];
 $status = $_POST["status"];
 $openes_on = $_POST["openes_on"];
+$under_maintenance = $_POST["under_maintenance"];
 
 $photo_name = null;
 
@@ -41,4 +43,4 @@ if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
     }
 }
 
-createAttraction($conn, $name, $type, $extra_information, intval($capacity), $status, $photo_name, $openes_on);
+createAttraction($conn, $name, $type, $extra_information, intval($capacity), $status, $photo_name, $openes_on, $under_maintenance);
