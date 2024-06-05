@@ -2,10 +2,10 @@
 
 include_once "../config/conn.php";
 
-function createAttraction($conn, $name, $type, $extra_information, $capacity, $status, $photo_name, $opened_on, $under_maintenance)
+function createAttraction($conn, $name, $type, $extra_information, $capacity, $status, $photo_name, $opened_on, $under_maintenance, $waiting_line)
 {
-    $query = "INSERT INTO attractions (name, type, capacity, openes_on, extra_information, photo_name, status, under_maintenance)
-              VALUES(:name, :type, :capacity, :openes_on, :extra_information, :photo_name, :status, :under_maintenance)";
+    $query = "INSERT INTO attractions (name, type, capacity, openes_on, extra_information, photo_name, status, under_maintenance, waiting_line)
+              VALUES(:name, :type, :capacity, :openes_on, :extra_information, :photo_name, :status, :under_maintenance, :waiting_line)";
 
     $statement = $conn->prepare($query);
 
@@ -17,7 +17,8 @@ function createAttraction($conn, $name, $type, $extra_information, $capacity, $s
         ':status' => $status,
         ':photo_name' => $photo_name,
         ':openes_on' => $opened_on,
-        ':under_maintenance' => $under_maintenance
+        ':under_maintenance' => $under_maintenance,
+        ':waiting_line' => $waiting_line
     ]);
 }
 
@@ -29,6 +30,7 @@ $capacity = $_POST["capacity"];
 $status = $_POST["status"];
 $openes_on = $_POST["openes_on"];
 $under_maintenance = $_POST["under_maintenance"];
+$waiting_line = $_POST["waiting_line"];
 
 $photo_name = null;
 
@@ -43,4 +45,4 @@ if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
     }
 }
 
-createAttraction($conn, $name, $type, $extra_information, intval($capacity), $status, $photo_name, $openes_on, $under_maintenance);
+createAttraction($conn, $name, $type, $extra_information, intval($capacity), $status, $photo_name, $openes_on, $under_maintenance, $waiting_line);

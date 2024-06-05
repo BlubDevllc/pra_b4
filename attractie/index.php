@@ -47,6 +47,10 @@ foreach ($attractions as $attraction) {
                                 <?php if ($attraction['under_maintenance'] == 1) {
                                     echo "Onder onderhoud";
                                 } 
+                                else
+                                {
+                                    echo $attraction["waiting_line"], " min";
+                                }
                                 ?>
                             </div>
                         </div>
@@ -74,6 +78,11 @@ foreach ($attractions as $attraction) {
                                 <?php if ($attraction['under_maintenance'] == 1) {
                                     echo "Onder onderhoud";
                                 } 
+                                else
+                                {
+                                    echo "Wachttijd: ";
+                                    echo $attraction["waiting_line"], " min";
+                                }
                                 ?>
                             </div>
                         </div>
