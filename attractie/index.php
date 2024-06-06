@@ -54,7 +54,7 @@ foreach ($attractions as $attraction) {
                                 ?>
                             </div>
                         </div>
-                        <a class="checkout" href="index.php?attraction=<?php $attraction["id"]; ?>">Bekijk</a>
+                        <a class="checkout" href="https://youtu.be/ae6Gg9LzcBY">Bekijk</a>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -86,7 +86,7 @@ foreach ($attractions as $attraction) {
                                 ?>
                             </div>
                         </div>
-                        <a class="checkout" href="index.php?attraction=<?php $attraction["id"]; ?>">Bekijk</a>
+                        <a class="checkout" href="https://youtu.be/igzOn57AuUQ">Bekijk</a>
                     </div>
                 <?php endforeach; ?>
             </div>

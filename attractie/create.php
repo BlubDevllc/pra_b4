@@ -21,6 +21,8 @@ include_once "../backend/helpers.php";
                             <input id="capacity" name="capacity" type="number" placeholder="100" min="1" class="input">
                             <input type="text" id="status" name="status" placeholder="Status" class="input">
                             <input id="openes_on" name="openes_on" type="date" class="input">
+                            <label for="under_maintenance">Onder onderhoud?</label>
+                            <input id="under_maintenance" name="under_maintenance" type="checkbox" class="input">
                             <input type="file" name="photo" id="photo" class="input">
                             <input type="submit" class="login-button">
                         </div>
