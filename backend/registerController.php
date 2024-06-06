@@ -58,13 +58,13 @@ function loginUser($email, $password, $conn)
 
 if ($_POST["action"] == "register")
 {
-    if ($_POST["password"] != $_POST["password_again"])
+    if ($_POST["password"] != $_POST["password_check"])
     {
         header("Location: ../auth/register.php?msg=Wachtwoord herhaling is niet dezelfde als jouw wachtwoord!");
         die();
     }
 
-    $status = registerUser($_POST["username"], $_POST["email"], $_POST["password"], $conn);
+    $status = registerUser($_POST["user"], $_POST["email"], $_POST["password"], $conn);
 
     if ($status == STATUS::SUCESSS)
     {
