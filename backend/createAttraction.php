@@ -51,3 +51,5 @@ if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
 }
 
 createAttraction($conn, $name, $type, $extra_information, intval($capacity), $status, $photo_name, $openes_on, $under_maintenance, $waiting_line);
+
+header("Location: ../attractie/index.php");
