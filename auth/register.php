@@ -20,6 +20,7 @@
         ?>
         <div class="login-form">
         <form action="../backend/registerController.php" method="POST">
+        <input type="hidden" name="action" id="action" value="register">
         <div class="form-group">
                 <label for="user">Naam:</label>
                 <input type="text" name="user" id="user" placeholder="naam" class="input-register">
