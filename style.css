@@ -312,6 +312,8 @@ nav a {
     text-align: center;
     font-family: "Poetsen One", sans-serif;
     font-size: large;
+    
+    padding-bottom: 1px;
 }
   
   
@@ -331,3 +333,11 @@ nav a {
     font-family: "Poetsen One", sans-serif;
     font-size: medium;
 }  
+.wacht
+{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    flex-wrap: wrap;
+    color: red;
+}
