@@ -18,7 +18,8 @@ include_once "../backend/helpers.php";
                             <input type="text" id="name" name="name" placeholder="Name" class="input">
                             <input type="text" id="type" name="type" placeholder="Type" class="input">
                             <textarea name="extra_information" id="extra_information" placeholder="Extra Information" class="input"></textarea>
-                            <input id="capacity" name="capacity" type="number" placeholder="100" min="1" class="input">
+                            <input id="capacity" name="capacity" type="number" placeholder="Capacity" min="1" class="input">
+                            <input id="waiting_line" name="waiting_line" type="number" placeholder="Wachtlijn" min="1" class="input">
                             <input type="text" id="status" name="status" placeholder="Status" class="input">
                             <input id="openes_on" name="openes_on" type="date" class="input">
                             <label for="under_maintenance">Onder onderhoud?</label>

@@ -29,7 +29,12 @@ $extra_information = $_POST["extra_information"];
 $capacity = $_POST["capacity"];
 $status = $_POST["status"];
 $openes_on = $_POST["openes_on"];
-$under_maintenance = $_POST["under_maintenance"];
+$under_maintenance = 0;
+if (!empty($_POST["under_maintenance"]))
+{
+    $under_maintenance = 1;
+
+}
 $waiting_line = $_POST["waiting_line"];
 
 $photo_name = null;
