@@ -1,9 +1,6 @@
 <?php
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: auth/login.php?msg=Je bent niet ingelogd");
-    exit;
- }
+
 
 include_once "../components/head.php";
 ?>

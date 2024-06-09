@@ -24,6 +24,7 @@ include_once "../backend/helpers.php";
                             <input id="openes_on" name="openes_on" type="date" class="input">
                             <label for="under_maintenance">Onder onderhoud?</label>
                             <input id="under_maintenance" name="under_maintenance" type="checkbox" class="input">
+                            <input type="text" id="waiting_line" name="waiting_line" placeholder="Wachttijd" class="input">
                             <input type="file" name="photo" id="photo" class="input">
                             <input type="submit" class="login-button">
                         </div>
